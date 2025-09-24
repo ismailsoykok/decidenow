@@ -1,0 +1,451 @@
+/* GLOBAL RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* CONTAINER */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background: linear-gradient(to right, #252646, #8f94fb);
+  color: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.buttons .button {
+  background-color: #ffffff;
+  color: #4e54c8;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  border: none;
+  margin-left: 12px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.buttons .button:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+/* MAIN CONTENT */
+.main-content {
+  display: flex;
+  gap: 20px;
+  padding: 30px 10%;
+}
+
+/* SIDEBARS */
+.left-sidebar, .right-sidebar {
+  flex: 0 0 20%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 30px;
+  height: fit-content;
+}
+
+.left-sidebar ul, .right-sidebar ul {
+  list-style: none;
+}
+
+.left-sidebar li, .right-sidebar li {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  background-color: #f1f3f5;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.left-sidebar li:hover, .right-sidebar li:hover {
+  background-color: #dbe2ef;
+}
+
+/* FEED */
+.feed {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* SURVEY */
+.survey {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 14px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+}
+
+.survey h3 {
+  margin-bottom: 16px;
+  font-size: 22px;
+  color: #222;
+}
+
+/* OPTION VOTE BUTTONS */
+.option-container {
+  position: relative;
+  background: #e9ecef;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  height: 50px;
+  box-shadow: inset 0 0 4px rgba(0,0,0,0.1);
+}
+
+.option-fill {
+  height: 100%;
+  transition: width 0.5s ease-in-out;
+  background-color: #6c63ff; /* default, override with JS */
+}
+
+.option-text {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* PROGRESS & STATUS */
+.survey-status {
+  margin-top: 20px;
+}
+
+.survey-status .progress-bar {
+  background: #dcdcdc;
+  height: 8px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.survey-status .progress-bar .progress {
+  height: 100%;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #4CAF50, #81C784);
+  width: 0%; /* dynamic via JS */
+  transition: width 0.4s ease-in-out;
+}
+
+/* COMMENTS */
+.comments {
+  margin-top: 25px;
+}
+
+.comment-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.comment-item img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.comment-content {
+  background: #f7f7f9;
+  padding: 12px 16px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 10px;
+  resize: vertical;
+  background-color: #fdfdfd;
+}
+
+.submit-comment {
+  margin-top: 10px;
+  background-color: #4e54c8;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-comment:hover {
+  background-color: #3d44b3;
+}
+
+/* LOGIN / REGISTER POPUP */
+.login, .register {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 380px;
+  background: #ffffff;
+  padding: 30px 25px;
+  border-radius: 16px;
+  border-top: 6px solid #6c63ff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* Başlık */
+.register h2 {
+  margin-top: 0;
+  text-align: center;
+  color: #6c63ff;
+  font-weight: 600;
+}
+
+/* Input ve Label stilleri */
+form div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+label {
+  font-weight: 500;
+  color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"] {
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+  border-color: #6c63ff;
+  box-shadow: 0 0 4px rgba(108, 99, 255, 0.4);
+  outline: none;
+}
+
+input:hover {
+  border-color: #6c63ff;
+}
+
+/* Submit Butonu */
+button[type="submit"] {
+  background: linear-gradient(90deg, #6c63ff, #7f78ff);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background: linear-gradient(90deg, #5a52e5, #716aff);
+}
+
+/* Kapatma Butonu */
+
+
+.bi-x-circle {
+  font-size: 1.5rem;
+  color: #444;
+  transition: color 0.2s;
+}
+
+.bi-x-circle:hover {
+  color: #ff3b3b;
+}
+
+/* Durum mesajı */
+.state {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* Giriş/Kayıt kartına animasyon */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, -60%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .left-sidebar, .right-sidebar, .feed {
+    width: 100%;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .buttons {
+    margin-top: 10px;
+  }
+
+  .login, .register {
+    width: 90%;
+  }
+}
+.option-wrapper {
+  position: relative;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.option-bar {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: width 0.4s ease-in-out;
+  z-index: 0;
+  opacity: 0.4;
+  border-radius: 8px;
+}
+
+.option-button {
+  position: relative;
+  width: 100%;
+  padding: 12px;
+  background-color: #ffffff;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  text-align: left;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  color: #333;
+  transition: 0.3s ease;
+}
+
+.option-button:disabled {
+  background-color: #f5f5f5;
+  color: #888;
+  cursor: not-allowed;
+}
+
+.option-button:hover:not(:disabled) {
+  background-color: #f0f0f0;
+}
+
+.option-label {
+  flex: 1;
+}
+
+.option-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+h2 {
+  text-align: center;              /* Ortala */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+  font-weight: 700;                /* Kalın */
+  font-size: 2.5rem;               /* Büyük puntolar */
+  color: #4a90e2;                  /* Hoş bir mavi ton */
+  text-shadow: 2px 2px 8px rgba(74, 144, 226, 0.5); /* Hafif gölge efekti */
+  letter-spacing: 2px;             /* Harf aralığını aç */
+  text-transform: uppercase;       /* Büyük harf */
+  margin: 20px 0;                  /* Üst ve alt boşluk */
+  user-select: none;               /* Yazının seçilmesini engelle */
+  transition: color 0.3s ease;    /* Renk geçişi için animasyon */
+}
+
+h2:hover {
+  color: #357ABD;                  /* Üzerine gelince renk değişimi */
+  text-shadow: 3px 3px 12px rgba(53, 122, 189, 0.7);
+  cursor: default;
+}
+
+.popular-button {
+  all: unset;
+  display: block;
+  width: 100%;
+  padding: 10px 16px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  background-color: #f1f3f5;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  text-align: left;
+  box-sizing: border-box; /* önemli */
+  transition: background-color 0.3s ease;
+  overflow-wrap: break-word; /* uzun yazıların taşmaması için */
+}
+
+.popular-button:hover {
+  background-color: #dbe2ef;
+}
+
+
+.popular-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(76, 123, 255, 0.5);
+}
+
+
+

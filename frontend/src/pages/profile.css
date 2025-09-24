@@ -1,0 +1,190 @@
+/* profile.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f6f9; /* Açık gri arka plan */
+    color: #333; /* Koyu metin rengi */
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #252e36; /* Mavi navbar */
+    padding: 15px 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.navbar-icons .profile-icon {
+    font-size: 2rem; /* İkon boyutunu ayarladık */
+    color: white;
+    cursor: pointer;
+}
+
+/* Profil Sayfası */
+.profile-container {
+    width: 70%;
+    margin: 30px auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.profile-header .email,
+.profile-header .dob {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Anket Bölümü */
+.survey-section {
+    margin-top: 30px;
+}
+
+.survey-section h2 {
+    font-size: 1.8rem;
+    color: #2f3741; /* Mavi başlık */
+    margin-bottom: 20px;
+}
+
+.survey-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.survey-input {
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #f3e3e3;
+    border-radius: 6px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.survey-input:focus {
+    border-color: #394149; /* Mavi border */
+    box-shadow: 0 0 5px rgba(19, 77, 138, 0.5); /* Mavi gölge */
+}
+
+/* Seçenekler ve Butonlar */
+.option-input-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.image-upload-container {
+    margin-top: 27px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Yatayda ortalama */
+}
+
+.image-upload-label {
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    padding: 12px; /* Kare hale getirdik */
+    border-radius: 6px; /* Köşeleri yuvarlattık */
+    font-size: 1.5rem; /* İkon büyüklüğü */
+    text-align: center;
+    width: 45px;  /* Sabit genişlik */
+    height: 45px; /* Sabit yükseklik */
+    display: flex;
+    justify-content: center; /* İçerideki ikonu ortalama */
+    align-items: center; /* İçerideki ikonu dikeyde ortalama */
+}
+
+.image-upload-label:hover {
+    background-color: #0056b3;
+}
+
+.image-upload-input {
+    display: none; /* Dosya yükleme butonunu gizliyoruz */
+}
+
+.uploaded-image {
+    margin-top: 10px;
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: cover;
+}
+
+.option-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.option-btn {
+    background-color: #007bff; /* Mavi buton */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.option-btn:hover {
+    background-color: #2f3842; /* Mavi buton hover */
+}
+
+.survey-submit {
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    background-color: #007bff; /* Mavi buton */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+h2 {
+  text-align: center;              /* Ortala */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+  font-weight: 700;                /* Kalın */
+  font-size: 2.5rem;               /* Büyük puntolar */
+  color: #4a90e2;                  /* Hoş bir mavi ton */
+  text-shadow: 2px 2px 8px rgba(74, 144, 226, 0.5); /* Hafif gölge efekti */
+  letter-spacing: 2px;             /* Harf aralığını aç */
+  text-transform: uppercase;       /* Büyük harf */
+  margin: 20px 0;                  /* Üst ve alt boşluk */
+  user-select: none;               /* Yazının seçilmesini engelle */
+  transition: color 0.3s ease;    /* Renk geçişi için animasyon */
+}
+
+h2:hover {
+  color: #357ABD;                  /* Üzerine gelince renk değişimi */
+  text-shadow: 3px 3px 12px rgba(53, 122, 189, 0.7);
+  cursor: default;
+}
+
+
